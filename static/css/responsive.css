@@ -1,0 +1,652 @@
+
+@media (max-width: 2950px) {
+    .about-us form label {
+        width: 100%;
+        display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+
+    
+
+    .about-us form input {
+        width: 90%;
+    }
+
+    .vakant {
+        width: 90%;
+        padding-top: 30px;
+    }
+
+    .download-cv {
+        width: 90%;
+    }
+
+    option:focus {
+        outline: none;
+    }
+
+    
+
+}
+
+
+
+
+@media (max-width: 1620px) {
+    .contact-content {
+        flex-wrap: wrap;
+    }
+
+    
+}
+
+
+
+
+@media (max-width: 1510px) {
+    .value-card {
+        width: 44%;
+    }
+
+    
+}
+
+@media (max-width: 1330px) {
+    .section-slide .item .cards {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .section-slide .item .cards .card7 {
+        width: 40%;
+    }
+
+  
+    .sectors-title p {
+        width: 100%;
+    }
+
+    .sector-paragraph {
+        width: 100%;
+    }
+
+    .all-filters {
+        flex-wrap: wrap;
+    }
+
+    
+}
+
+
+@media (max-width: 1260px) {
+    .history-title p {
+        right: unset;
+    }
+
+    .leadership {
+        flex-wrap: wrap;
+    }
+
+    .leader-title {
+        width: 100%;
+    }
+
+    .leadership-filter {
+        width: 100%;
+    }
+
+
+    
+}
+
+@media (max-width: 1150px) {
+    
+    .bars {
+        display: block;
+        z-index: 999;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    #navv {
+        position: absolute;
+    top: 0;
+    left: -100%;
+    text-align: left;
+    transition: 0.5s linear;
+    }
+      
+    .list {
+        padding: 4px 20px;
+    }
+    .bars {
+        display: block;
+    }
+
+    .bars img{
+        display: block;
+    }
+
+    .navbar-list {
+        padding-top: 150px; }
+
+    #navv.active {
+        left: 0;
+        width: 100%;
+        z-index: 999;
+        text-align: left;
+        background-color: #00935F;
+        height: 100vh;
+        width: 80%;
+        position: absolute;
+        top: 0;
+        padding-top: 150px;
+        padding-left: 50px;
+    }
+
+    #navv li {
+        display: block;
+        font-size: 14px; }
+
+        .navbar-list {
+            display: block;
+        }
+
+        .navbar-list  ul {
+            padding-left: 0;
+        }
+
+        .img-box {
+            display: none;
+        }
+
+        .img-box3 {
+            display: none;
+        }
+
+        .list-area {
+            display: flex;
+        }
+
+        .corporative {
+            padding-top: 0;
+        }
+
+
+        .menu-one {
+            position: absolute;
+            top: 420px;
+        }
+
+        .list-area {
+            width: 100%;
+        }
+
+        .card2 a {
+            font-weight: 200;
+            line-height: 14px;
+        }
+
+        .card3 a {
+            font-weight: 200;
+            line-height: 14px;
+        }
+
+        .corporative h4 {
+            font-weight: 300;
+        }
+       
+        .corporative p {
+            font-weight: 200;
+        }
+
+        .wrapper.show {
+            width: 81%;
+        }
+
+        .wrapper2.show {
+            width: 81%;
+        }
+
+        .value-card {
+            width: 70%;
+        }
+
+        .vacancy-box {
+            width: 70%;
+        }
+
+        .history-img h1 {
+            font-size: 60px;
+            line-height: 80px;
+        }
+
+
+        .history-title p {
+            right: unset;
+        }
+        
+        
+
+       
+}
+
+@media (max-width: 1056px)  {
+    .all-filters {
+        justify-content: center;
+    }
+
+    .corporativ-title p {
+        width: 100%;
+    }
+
+    
+
+}
+
+
+@media (max-width: 1020px) {
+    
+    .inn-box {
+        flex-wrap: wrap;
+    }
+    
+    .inn-box .box-img-area {
+        width: 100%;
+    }
+    
+    .inn-box .box-details-area {
+        width: 100%;
+        padding: 30px;
+    }
+    
+    .box-details-area h1  {
+        font-size: 35px;
+        font-weight: 50px;
+    }
+
+    .box-details-area p {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+        padding-top: 20px; 
+    }
+
+    .contact-content {
+        justify-content: center;
+    }
+ 
+    .contact-content input {
+        width:600px;
+    }
+
+    .contact-content form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    textarea  {
+        width: 600px;
+    }
+
+    form button {
+        width: 600px;
+    }
+
+    
+}
+
+@media (max-width: 990px) {
+    .footer-content {
+        flex-wrap: wrap;
+    }
+
+    .copyright {
+        width: 100%;
+        text-align: center;
+    }
+
+    .socials {
+        width: 100%;
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .powered-by {
+        width:  100%;
+        text-align: center;
+    }
+
+    .team-members {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-bottom: 200px;
+    }
+
+    .team-member-box {
+        width: 78%;
+        margin-bottom: 210px;
+
+    }
+
+    .about-us form label {
+        width: 100%;
+        display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    }
+
+    .about-us form input {
+        width: 90%;
+    }
+    
+    
+
+    .vakant {
+        width: 90%;
+    }
+
+    .download {
+        width: 90%;
+        
+    }
+
+    .download-cv {
+        width: 90%;
+    }
+    
+} 
+
+
+@media (max-width: 910px) {
+    .section-slide .item .cards .card7 {
+        width: 80%;
+    }
+
+    .history  {
+        padding: 88px 0;
+    }
+
+    .history-content {
+        flex-wrap: wrap;
+        padding: 30px 0;
+    }
+
+    .history-content .history-title {
+        width: 100%;
+    }
+
+    .history-content .history-text {
+        width: 100%;
+    }
+
+
+    .history-title p {
+        position: relative;
+        right: 0;
+
+        padding-bottom: 20px;
+    }
+    .history-img h1 {
+        right: 0;
+        bottom: 0;
+        top: 30px;
+        font-size: 35px;
+        line-height: 45px;
+    }
+
+    
+}
+
+@media (max-width: 895px) {
+    .header-title {
+        padding: 0 70px;
+    }
+
+    .contact-box {
+        width: 100%;
+        height: initial;
+    }
+
+    .contact-box-details {
+        flex-wrap: wrap;
+    }
+
+    .box-contact-btn {
+        padding: 30px 0;
+    }
+
+    .team-member-box {
+        margin-bottom: 150px;
+        height: 620px;
+    }
+
+   
+    .innovation-details-title p {
+        position: relative;
+    }
+
+
+    .title-of-career {
+        font-size: 45px;
+        line-height: 50px;
+    }
+
+    .value-title h1 {
+        font-size: 45px;
+        line-height: 50px;
+    }
+
+    .value-title p {
+        width: 100%;
+    }
+
+    
+
+}
+
+
+
+@media (max-width: 750px) {
+    .corporative {
+        display: none;
+    }
+
+    .innovations-items .item {
+        width: 430px;
+    }
+
+    .owl-carousel .owl-item img {
+        width: initial;
+    }
+
+    .item-date {
+        top: 320px;
+    }
+
+    .vacancy-d {
+        height: 700px;
+    }
+
+    .vacancy-title h3 {
+        padding-bottom: 0;
+        text-align: center;
+    }
+    .vacancy-btns {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .vacancy-btns a {
+        padding: 20px 0;
+    }
+
+    .vacancy-btns .join-us {
+        margin-right: 0;
+    }
+
+    .upload {
+        margin:  15px 0;
+    }
+
+    
+}
+
+@media (max-width: 680px) {
+    .contact-content input {
+        width: 400px;
+    }
+
+    textarea {
+        width: 400px;
+    }
+
+    form button {
+        width: 400px;
+    }
+
+    .map-btns {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 50px 0;
+    }
+
+    .map-btn1 {
+        margin: 40px 20px;
+    }
+    
+}
+
+
+@media (max-width: 600px)  {
+
+    .header-title h1 {
+        font-size: 40px;
+        line-height: 55px;
+    }
+
+    .innovations-slide {
+        padding: 50px 0;
+    }
+
+    .innovations-slide .item {
+        width: 270px;
+        height: 550px;
+        padding: 25px;
+    }
+
+    .innovations-slide .info p {
+        font-size: 18px;
+        line-height: 25px;
+    }
+
+
+    .innovation-details-title {
+        flex-wrap: wrap;
+    }
+
+    .innovation-details-title .edit2 {
+        display: flex;
+    }
+
+    .innovation-details-title .number-date .number {
+        padding-right: 20px;
+    }
+    
+    .innovations-title {
+        font-size: 45px;
+    }
+
+    .color-b {
+        padding-bottom: 30px;
+    }
+
+
+    .value-card {
+        width: 100%;
+        height: initial;
+    }
+
+    .value-img {
+        height: 38%;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .item-date {
+        position: absolute;
+        bottom: 22px;
+        width: 77%;
+        top: initial;
+    }
+
+    .contact-box {
+        margin: 100px 0;
+    }
+
+    
+}
+
+
+@media (max-width: 500px)  {
+    .vacancy-box H4 {
+        font-size: 24PX;
+    }
+
+    .vacancy-box a {
+        font-size: 16px;
+    }
+
+    
+
+}
+
+@media (max-width: 430px)  {
+    .innovation-cards-d .item {
+        width: 340px;
+        margin: 14px;
+    }
+
+
+    .team-member-box {
+        margin-bottom: 0;
+        height: 535px;
+    }
+
+    .contact-content input {
+        width: 300px;
+    }
+
+
+    textarea {
+        width: 300px;
+    }
+
+    form button {
+        width: 300px;
+    }
+
+    .contact-content {
+        padding-bottom: 100px;
+    }
+
+    .reference-slide .item {
+        width: 330px;
+        height: 750px;
+    }
+
+    .reference-slide .img-title {
+        top: 27%;
+        left: 15%;
+    }
+
+    
+
+    
+}

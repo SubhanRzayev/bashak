@@ -1,0 +1,373 @@
+
+{% load static %}
+{% load custom_tags %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.green.min.css">
+ 
+    <link type="text/css" href="@@path/vendor/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <title>Bashak</title>
+</head>
+<body>
+
+
+<header>
+    <nav class="scrolling2">
+        <div class="navbar">
+            <div class="logo change-logo">
+              <a href="{% url 'core:index' %}">
+                  <img src="{% static 'svg/logo2.svg' %}" alt="">
+                </a>  
+            </div>
+
+                <div class="navbar-list nav-list " id="navv">
+                   <ul>
+                       <li>
+                        <div class="drop-btn list list-color">
+                            <div class="c drop-one-1 black" data-sub="item1">  Korporativ  
+                                <span class="drop-down change-icon"><img src="{% static 'svg/arrow-black.svg' %}" alt=""></span>
+                            </div>
+                        </div>
+                       </li>
+                    
+                   </ul> 
+                   
+                   <ul>
+                       <li>
+                            <div class="drop-btn open-list list list-color">
+                                <div class="c drop-one-1 black"  data-sub="item2">Sektorlar
+                                    <span class="drop-down change-icon"><img src="{% static 'svg/arrow-black.svg' %}" alt=""></span>
+                                </div>
+                            </div>
+                       </li>   
+                   </ul>
+                    
+                   <ul>
+                       <li>
+                            <div class="drop-btn list list-color black">
+                                <a href="{% url 'core:innovations' %}">Yeniliklər</a>
+                            </div>
+                       </li>
+                   </ul>
+                    
+                    <ul>
+                        <li>
+                            <div class="drop-btn list list-color black">
+                                <a href="{% url 'core:career' %}">Karyera</a>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                    
+                    <ul>
+                        <li>
+                            <div class="drop-btn list list-color black">
+                                <a href="{% url 'core:contact' %}">Əlaqə</a>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                    
+            
+                    <div class="submenu wrapper" id="item1">
+                        <ul class="menu-bar">
+                            <div class="menu-one"> 
+                                <div class="list-area">
+                                    <div class="change-img">
+                                        {% header_categories as context %}
+                                            {% for s in context.korporativcategory %}
+                                            <div class="card3" data-bg="{{s.image.url}}">
+                                                {% if s.title == "Şirkət tarixçəsi" %}
+                                                <a href="{% url 'core:korporative' %}#history">{{s.title}}</a>
+                                                {% elif s.title == "Rəhbərlik" %}                                                
+                                                <a href="{% url 'core:korporative' %}#leadership">{{s.title}}</a>
+                                                {% elif s.title == "Missiyamız" %}
+                                                <a href="{% url 'core:korporative' %}#ourmission">{{s.title}}</a>
+                                                {% endif %}
+                                            </div>
+                                            {% endfor %}
+                                    </div>
+
+                                    <div class="corporative">
+                                        <h4>Korporativ</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis aliquet libero, ac suscipit libero sollicitudin eget.</p>
+                                    </div>
+                                </div>
+                            
+                                <div class="img-box3">
+                                   
+                                </div>
+                            </div>
+                        </ul>
+                    </div>
+
+
+                    <div class="submenu wrapper2" id="item2">
+                        <div class="menu-bar2">
+                            <div class="menu-one"> 
+                                <div class="list-area">
+                                    <div class="change-img">
+                                        {% header_category as context%}
+
+                                            {% for i in context %}
+
+                                            <div class="card2" data-bg="{{i.sector_image.url}}">
+                                                <a href="{{i.get_absolute_url}}">{{i.title}}</a>
+                                            </div>
+                                            {% endfor %}
+                                    </div>
+
+                                    <div class="corporative">
+                                        <h4>Sektorlar</h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis aliquet libero, ac suscipit libero sollicitudin eget.</p>
+                                    </div>
+                                </div>
+                            
+                                <div class="img-box">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="menu bar">
+                    <span class="menu-global menu-global-black menu-top"></span>
+                    <span class="menu-global  menu-global-black menu-middle"></span>
+                    <span class="menu-global  menu-global-black menu-bottom"></span>
+                  </div>
+
+                <div class="lang  change-lang-color">
+                    <li class="button-dropdown">
+                        <a href="javascript:void(0)" class="dropdown-toggle2">
+                            <span class="drop-down  change-icon2"><img src="{% static 'svg/arrow-black-right.svg' %}" alt=""></span>
+                            <p>AZ</p>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                              <a href="#">
+                                En
+                              </a>
+
+                              <a href="#">
+                                Ru
+                              </a>
+                            </li>
+                          </ul>
+                    </li>
+                </div>
+          
+        </div>
+    </nav>
+
+</header>
+    
+  
+
+    <section class="vacancy-d">
+        <div class="my-container">
+
+            <div class="vacancy-title">
+
+                <h3>{{career.position}}</h3>
+
+                <div class="vacancy-btns">
+                    <a href="#joinus">
+                        <div class="join-us"> <p>Müraciət edin</p>  </div>
+                     </a>
+
+                     <a href="#join">
+                        <div class="join-us btn-gray"> <p>Haqqımızda</p>  </div>
+                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vacancy-details background-color-g">
+        <div class="my-container">
+            <div class="vacancy-content">
+                
+                <div class="about-vacancy">
+                    <h4>Vəzifə</h4>
+                    <p>{{career.position}}</p>
+                </div>
+
+                <div class="about-vacancy">
+                    <h4>Tələblər</h4>
+                    <ul>
+                        {{career.requirements|safe}}
+                    </ul>
+                </div>
+
+                <div class="about-vacancy">
+                    <h4>Öhdəliklər</h4>
+                    <ul>
+                        {{career.obligations|safe}}
+                    </ul>
+                </div>
+
+                <div class="about-vacancy">
+                    <h4>İş şəraiti</h4>
+                    <ul>
+                        {{career.working_conditions|safe}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="about-us" >
+        <div class="my-container">
+            <div class="about-vacancy" id="join">
+                <h4 >Haqqımızda</h4>
+                {% for a in about_list %}
+                <p>{{a.haqqımızda}}</p>
+                {% endfor %}
+            </div>
+
+            <hr class="ihavemargin">
+
+            <div class="cv" id="addcv">
+
+                <div class="about-vacancy">
+                    <h4>CV-ni yüklə</h4>
+                   
+                </div>
+
+                <form action="" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="vacancy-001">
+                        
+                        <label for="">
+                            <div class="custom-select">
+                                <p>Vakant Yer</p>
+                                <select class="requiredS1" id="experience">
+                                  <option  value="{{career}}" selected>{{career}}</option>
+                                 
+                                </select>
+                              </div>
+
+                            {{forms.career}}
+                            <div class="vakant">*AD, SOYAD, ATA ADI</div>
+                            {{forms.full_name}}
+                            <div class="vakant">*E-MAIL</div>
+                            
+                            {{forms.label}}
+                            {{forms.email}}
+                        <div class="vakant">*CV FAYL (PDF, DOC, DOCX)</div>
+
+                            {{forms.label}}
+                              
+                            {{forms.cv}}
+
+                            </div>
+                            
+
+
+                        </label>
+                        
+                        
+                            
+                                           
+                    </div>
+
+                    <div class="vacancy-btns send-vacancy" id="joinus">
+                        <button type="submit" id="basicAlert" class=" btn btn-outline-dark join-us"><p>Göndər</p></div>
+                    </div>
+                    
+                </form>
+
+            </div>
+
+            <hr>
+
+        </div>
+    </section>
+ 
+    
+
+    <footer>
+        <div class="my-container">
+            <div class="footer-content">
+                <div class="copyright">
+                    © Başak Group 2022. Bütün haqqları qorunur.
+                </div>
+
+                <div class="socials">
+                   <a href=""><img src="{% static 'svg/instagram.svg' %}" alt=""></a> 
+                   <a href=""><img src="{% static 'svg/facebook.svg' %}" alt=""></a> 
+                   <a href=""><img src="{% static 'svg/linkedin.svg' %}" alt=""></a> 
+                </div>
+
+                <div class="powered-by">
+                   <a href=""><img src="{% static 'svg/powered-by.svg' %}" alt=""></a> 
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
+    
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <script>
+		const body = document.querySelector(".sectors-background");
+		const li = document.querySelectorAll(".card7");
+
+		li.forEach(el => {
+			el.addEventListener("mouseover", () => {
+				let bg = el.getAttribute("data-bg");
+				body.style.background = `url(${bg})no-repeat center /cover`;
+			});
+		});
+
+
+        document.getElementById('basicAlert').addEventListener('click', function () {
+            Swal.fire(
+                'Basic alert',
+                'You clicked the button!'
+            )
+        });
+
+        {% comment %} {% for message in messages %}
+        swal('{{message}}',"success");
+        {% endfor %} {% endcomment %}
+        {% for message in messages %}
+        swal("Successfully completed!", '{{message}}', "success");
+        {% endfor %}
+
+    
+	</script>
+    
+</body>
+</html>

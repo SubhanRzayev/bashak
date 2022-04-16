@@ -1,0 +1,283 @@
+{% load static %}
+{% load thumbnail %}
+{% load custom_tags %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.green.min.css">
+ 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <title>Bashak</title>
+</head>
+<body>
+
+    <header>
+        <nav class="scrolling2">
+            <div class="navbar">
+                <div class="logo change-logo">
+                  <a href="{% url 'core:index' %}"><img src="{% static 'svg/logo2.svg' %}" alt=""></a>  
+                </div>
+
+                    <div class="navbar-list nav-list " id="navv">
+                       <ul>
+                           <li>
+                            <div class="drop-btn list list-color">
+                                <div class="c drop-one-1 black" data-sub="item1">  Korporativ  
+                                    <span class="drop-down change-icon"><img src="{% static 'assets/' %}" alt=""></span>
+                                </div>
+                            </div>
+                           </li>
+                        
+                       </ul> 
+                       
+                       <ul>
+                           <li>
+                                <div class="drop-btn open-list list list-color">
+                                    <div class="c drop-one-1 black"  data-sub="item2">Sektorlar
+                                        <span class="drop-down change-icon"><img src="{% static 'svg/arrow-black.svg' %}" alt=""></span>
+                                    </div>
+                                </div>
+                           </li>   
+                       </ul>
+                        
+                       <ul>
+                           <li>
+                                <div class="drop-btn list list-color black">
+                                    <a href="{% url 'core:innovations' %}">Yeniliklər</a>
+                                </div>
+                           </li>
+                       </ul>
+                        
+                        <ul>
+                            <li>
+                                <div class="drop-btn list list-color black">
+                                    <a href="{% url 'core:career' %}">Karyera</a>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        
+                        <ul>
+                            <li>
+                                <div class="drop-btn list list-color black">
+                                    <a href="{% url 'core:contact' %}">Əlaqə</a>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                        
+                
+                        <div class="submenu wrapper" id="item1">
+                            <ul class="menu-bar">
+                                <div class="menu-one"> 
+                                    <div class="list-area">
+                                        <div class="change-img">
+                                            {% header_categories as context %}
+                                            {% for s in context.korporativcategory %}
+                                            <div class="card3" data-bg="{{s.image.url}}">
+                                                {% if s.title == "Şirkət tarixçəsi" %}
+                                                <a href="{% url 'core:korporative' %}#history">{{s.title}}</a>
+                                                {% elif s.title == "Rəhbərlik" %}                                                
+                                                <a href="{% url 'core:korporative' %}#leadership">{{s.title}}</a>
+                                                {% elif s.title == "Missiyamız" %}
+                                                <a href="{% url 'core:korporative' %}#ourmission">{{s.title}}</a>
+                                                {% endif %}
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+
+                                        <div class="corporative">
+                                            <h4>Korporativ</h4>
+                                            <p>Keyfiyyət təkcə bizim standartımız deyil. Bu, həm də şirkətimizə aşılanmış bir münasibətdir. 
+                                            </p>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="img-box3">
+                                       
+                                    </div>
+                                </div>
+                            </ul>
+                        </div>
+
+
+                        <div class="submenu wrapper2" id="item2">
+                            <div class="menu-bar2">
+                                <div class="menu-one"> 
+                                    <div class="list-area">
+                                        <div class="change-img">
+                                            {% header_category as context%}
+
+                                            {% for i in context %}
+
+                                            <div class="card2" data-bg="{{i.sector_image.url}}">
+                                                <a href="{{i.get_absolute_url}}">{{i.title}}</a>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+
+                                        <div class="corporative">
+                                            <h4>Sektorlar</h4>
+                                            <p>İllərdir sübut olunmuş təcrübə ilə bu gün İnşaat, Təchizat və Dam örtükləri sahələrində fəaliyyət göstəririk.</p>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="img-box">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu bar">
+                        <span class="menu-global menu-global-black menu-top"></span>
+                        <span class="menu-global  menu-global-black menu-middle"></span>
+                        <span class="menu-global  menu-global-black menu-bottom"></span>
+                      </div>
+
+                    <div class="lang  change-lang-color">
+                        <li class="button-dropdown">
+                            <a href="javascript:void(0)" class="dropdown-toggle2">
+                                <span class="drop-down  change-icon2"><img src="{% static 'svg/arrow-black-right.svg' %}" alt=""></span>
+                                <p>AZ</p>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                  <a href="#">
+                                    En
+                                  </a>
+
+                                  <a href="#">
+                                    Ru
+                                  </a>
+                                </li>
+                              </ul>
+                        </li>
+                    </div>
+              
+            </div>
+        </nav>
+  
+    </header>
+
+   
+
+    
+    <section class="inn-title">
+        <div class="my-container">
+            <div class="innovations-title color-b">Yeniliklər</div>
+        </div> 
+    </section>
+
+   
+
+    <section class="innovations-gray">
+        <div class="my-container">
+           
+            <div class="innovation-details-title">
+                <div class="number-date">
+                    <div class="dates dates-edit edit2">
+                        <div class="number">{{innovations.created_at.day}}</div>
+                        <div class="date">{{innovations.created_at|date:"F" }} <br> {{innovations.created_at|date:"Y"}}</div>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="details-title">
+                    <h1>{{innovations.title}}</h1>
+                    <p>{{innovations.description}}</p>
+                </div>
+            </div>
+
+
+            <div class="innovation-details-img-area">
+                {% thumbnail innovations.news_image "1540x800" crop="center" as im %}
+                    <img src="{{ im.url }}" width="1540" height="800">
+                {% endthumbnail %}
+            </div>
+
+            <div class="innovation-details-text">
+                <p class="details-text">{{innovations.content|safe}}</p>
+
+                    <hr>
+
+                    <div class="share-div">
+                        <div class="share">
+                            <p>Paylaşın</p>
+                            <idiv class="share-icons">
+                                <img src="{% static 'svg/fb.svg' %}" alt="">
+                                <img src="{% static 'svg/in.svg' %}" alt="">
+                            </idiv>
+                        </div>
+                        
+                    </div>
+                </div>
+        
+        </div>
+    </section>
+
+    <footer>
+        <div class="my-container">
+            <div class="footer-content">
+                <div class="copyright">
+                    © Başak Group 2022. Bütün haqqları qorunur.
+                </div>
+
+                <div class="socials">
+                   <a href=""><img src="{% static 'svg/instagram.svg' %}" alt=""></a> 
+                   <a href=""><img src="{% static 'svg/facebook.svg' %}" alt=""></a> 
+                   <a href=""><img src="{% static 'svg/linkedin.svg' %}" alt=""></a> 
+                </div>
+
+                <div class="powered-by">
+                   <a href=""><img src="{% static 'svg/powered-by.svg' %}" alt=""></a> 
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" ></script>
+   
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <script>
+		const body = document.querySelector(".sectors-background");
+		const li = document.querySelectorAll(".card7");
+
+		li.forEach(el => {
+			el.addEventListener("mouseover", () => {
+				let bg = el.getAttribute("data-bg");
+				body.style.background = `url(${bg})no-repeat center /cover`;
+			});
+		});
+
+    
+	</script>
+    
+</body>
+</html>
