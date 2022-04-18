@@ -377,7 +377,7 @@ nav {
 .sectors-background {
     position: relative;
     height: initial;
-    background: url(../img/sectors.png)  center center / cover no-repeat;
+    background: url(../img/construction-business.jpg)  center center / cover no-repeat;
    
     
 }
@@ -1280,7 +1280,7 @@ form button {
 /********************************  TIKINTI  ********************************/
 
 .sector-bg {
-    background: url(../img/ector-t.png) no-repeat;
+    background: url(../img/construction-business.jpg) no-repeat;
     background-size: cover;
 }
 
@@ -1360,6 +1360,16 @@ form button {
   .reference-slide .item:hover .overlay .head {
     transform: translateY(0px);
   }
+
+.lng{
+    background: none;
+    border: none;
+    color: #fff;
+}
+
+option {
+    color: black;
+}
 
 
 
@@ -1741,7 +1751,7 @@ form button {
     position: absolute;
     width: 40px;
     height: 40px;
-    right: 100px;
+    right: 120px;
     display: none;
     z-index: 9999;
   }

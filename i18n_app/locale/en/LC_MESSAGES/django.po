@@ -1,0 +1,339 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-18 13:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: bashak/settings.py:258
+msgid "Azerbaijani"
+msgstr ""
+
+#: bashak/settings.py:259
+msgid "English"
+msgstr ""
+
+#: bashak/settings.py:260
+msgid "Russian"
+msgstr ""
+
+#: core/templates/career.html:38 core/templates/career.html:103
+#: core/templates/contact.html:37 core/templates/contact.html:102
+#: core/templates/corporative.html:38 core/templates/corporative.html:103
+#: core/templates/corporative.html:181 core/templates/index.html:37
+#: core/templates/index.html:102 core/templates/innovations-details.html:39
+#: core/templates/innovations-details.html:104
+#: core/templates/innovations.html:39 core/templates/innovations.html:104
+#: core/templates/sectors.html:40 core/templates/sectors.html:105
+#: core/templates/team.html:39 core/templates/team.html:104
+#: core/templates/team.html:185 core/templates/vacancy-details.html:43
+#: core/templates/vacancy-details.html:108
+#: core/templates/vacancy-details.html:196
+#: core/templates/vacancy-details.html:240
+msgid "Haqqımızda"
+msgstr "About"
+
+#: core/templates/career.html:49 core/templates/contact.html:48
+#: core/templates/contact.html:133 core/templates/corporative.html:49
+#: core/templates/corporative.html:134 core/templates/index.html:48
+#: core/templates/index.html:129 core/templates/innovations-details.html:50
+#: core/templates/innovations-details.html:134
+#: core/templates/innovations.html:50 core/templates/innovations.html:135
+#: core/templates/sectors.html:51 core/templates/sectors.html:135
+#: core/templates/team.html:50 core/templates/team.html:135
+#: core/templates/vacancy-details.html:54
+#: core/templates/vacancy-details.html:137
+msgid "Bizneslər"
+msgstr "Businesses"
+
+#: core/templates/career.html:59 core/templates/contact.html:58
+#: core/templates/corporative.html:59 core/templates/index.html:58
+#: core/templates/index.html:230 core/templates/innovations-details.html:60
+#: core/templates/innovations-details.html:183
+#: core/templates/innovations.html:60 core/templates/innovations.html:181
+#: core/templates/sectors.html:61 core/templates/team.html:60
+#: core/templates/vacancy-details.html:64
+msgid "Yeniliklər"
+msgstr "News"
+
+#: core/templates/career.html:67 core/templates/contact.html:66
+#: core/templates/corporative.html:67 core/templates/index.html:66
+#: core/templates/innovations-details.html:68
+#: core/templates/innovations.html:68 core/templates/sectors.html:69
+#: core/templates/team.html:68 core/templates/vacancy-details.html:72
+msgid "Karyera"
+msgstr "Career"
+
+#: core/templates/career.html:76 core/templates/contact.html:75
+#: core/templates/contact.html:181 core/templates/corporative.html:76
+#: core/templates/index.html:75 core/templates/innovations-details.html:77
+#: core/templates/innovations.html:77 core/templates/sectors.html:78
+#: core/templates/team.html:77 core/templates/vacancy-details.html:81
+msgid "Əlaqə"
+msgstr "Contact"
+
+#: core/templates/career.html:104 core/templates/sectors.html:106
+msgid ""
+"Keyfiyyət təkcə bizim standartımız deyil. Bu, həm də şirkətimizə aşılanmış "
+"bir münasibətdir. "
+msgstr ""
+"Quality is not our only standard. It is also instilled in our companyIt's an "
+"attitude."
+
+#: core/templates/career.html:134
+msgid "Bizneslər "
+msgstr "Businesses"
+
+#: core/templates/career.html:135 core/templates/contact.html:134
+#: core/templates/corporative.html:135 core/templates/index.html:130
+#: core/templates/innovations-details.html:135
+#: core/templates/innovations.html:136 core/templates/sectors.html:136
+#: core/templates/team.html:136 core/templates/vacancy-details.html:138
+msgid ""
+"İllərdir sübut olunmuş təcrübə ilə bu gün İnşaat, Təchizat və Dam örtükləri "
+"sahələrində fəaliyyət göstəririk."
+msgstr ""
+"Today with years of proven experience in Construction, Supply and RoofingWe "
+"operate in the fields."
+
+#: core/templates/career.html:184
+msgid "Gəlin birlikdə böyük"
+msgstr "Let's have a great time together"
+
+#: core/templates/career.html:184
+msgid "işlər görək"
+msgstr "let's do things"
+
+#: core/templates/career.html:187
+msgid "Bizə qoşulun"
+msgstr "Join Us"
+
+#: core/templates/career.html:196
+msgid "Başak Group dəyərləri"
+msgstr "Bashak Group values"
+
+#: core/templates/career.html:197
+msgid ""
+"Bu gün özümüz üçün müəyyən etdiyimiz dəyərlər səyahətimizi daha zövqlü "
+"edəcək və həyatımıza mənalı bir məqsəd qatacaq."
+msgstr ""
+"The values we set for ourselves today make our journey more enjoyablewill "
+"and will add a meaningful purpose to our lives."
+
+#: core/templates/career.html:205
+msgid "Həlledici"
+msgstr "Solvent"
+
+#: core/templates/career.html:211
+msgid ""
+"Hər şeydən öncə müştəri ilə əla müştəri təcrübəsi yaratmaq üçün qərarlı olun."
+msgstr ""
+"First and foremost, be determined to create an excellent customer experience "
+"with your customer."
+
+#: core/templates/career.html:220
+msgid "Empatiya"
+msgstr "Empathy"
+
+#: core/templates/career.html:226
+msgid "Menecerlər heyətin üzləşdiyi şəxsi problemləri başa düşməlidirlər."
+msgstr "Managers need to understand the personal challenges facing staff."
+
+#: core/templates/career.html:235
+msgid "Qənaət"
+msgstr "Saving"
+
+#: core/templates/career.html:241
+msgid "Şirkətin pulunu öz pulunuzu xərclədiyiniz şəkildə xərcləyin."
+msgstr "Spend the company's money the way you spend your money."
+
+#: core/templates/career.html:250
+msgid "Yenilikçi"
+msgstr "Innovative"
+
+#: core/templates/career.html:256
+msgid ""
+"Bu, daha böyük dəyişikliklər gətirmək deyil, həm də hər hansı bir prosesin "
+"təkmilləşdirilməsi, xərclərin azaldılması və müştəri təcrübəsi yaratmaqdır."
+msgstr ""
+"It will not only bring bigger changes, but also any processto improve, "
+"reduce costs and create a customer experience."
+
+#: core/templates/career.html:266
+msgid "Etibarlı"
+msgstr "Reliable"
+
+#: core/templates/career.html:272
+msgid "Öhdəliyinizə əməl edin. Həmkarlarınıza qarşı dürüst və açıq olun."
+msgstr "Keep your commitment. Be honest and open with your colleagues."
+
+#: core/templates/career.html:282
+msgid "Mükəmməl Müştəri xidməti"
+msgstr "Excellent Customer Service"
+
+#: core/templates/career.html:288
+msgid "Müştərini daha yaxşı başa düşün."
+msgstr "Understand the customer better."
+
+#: core/templates/career.html:299
+msgid "Aktual vakansiyalar"
+msgstr "Current vacancies"
+
+#: core/templates/career.html:300
+msgid ""
+"Biz həmişə missiyamıza qoşulmaq üçün böyük insanları axtarırıq. Hekayəmizin "
+"bir hissəsi olmaq istəyirsinizsə, bu gün müraciət edin."
+msgstr ""
+"We are always looking for great people to join our mission.If you want to be "
+"a part, apply today."
+
+#: core/templates/career.html:308
+msgid "Müraciət et"
+msgstr "Apply"
+
+#: core/templates/contact.html:103 core/templates/corporative.html:104
+#: core/templates/index.html:103 core/templates/index.html:197
+#: core/templates/innovations-details.html:105
+#: core/templates/innovations.html:105 core/templates/team.html:105
+#: core/templates/vacancy-details.html:109
+msgid ""
+"Keyfiyyət təkcə bizim standartımız deyil. Bu, həm də şirkətimizə aşılanmış "
+"bir münasibətdir."
+msgstr ""
+"Quality is not only our standard. It is also instilled in our companyIt's an "
+"attitude."
+
+#: core/templates/contact.html:206
+msgid "Xəritəni göstər"
+msgstr "Show map"
+
+#: core/templates/contact.html:211
+msgid "Marşurutu göstər"
+msgstr "Show route"
+
+#: core/templates/contact.html:225
+msgid "Adınız"
+msgstr "Your name"
+
+#: core/templates/contact.html:241
+msgid "Telefon nömrə"
+msgstr "Phone number"
+
+#: core/templates/contact.html:249
+msgid "İsmarıc"
+msgstr "Message"
+
+#: core/templates/contact.html:255
+msgid "GÖNDƏR"
+msgstr "SEND"
+
+#: core/templates/contact.html:266 core/templates/corporative.html:305
+#: core/templates/index.html:304 core/templates/innovations-details.html:239
+#: core/templates/innovations.html:258 core/templates/sectors.html:257
+#: core/templates/team.html:239 core/templates/vacancy-details.html:311
+msgid "Başak Group 2022. Bütün haqqları qorunur."
+msgstr "Basak Group 2022. All rights reserved."
+
+#: core/templates/index.html:182
+msgid "Azərbaycanda Kirəmit"
+msgstr "Tile in Azerbaijan"
+
+#: core/templates/index.html:182
+msgid "Sahəsində Lider Şirkət"
+msgstr "Leading Company in the field"
+
+#: core/templates/index.html:183
+msgid ""
+"Biz sahəmiz üzrə yeni və innovativ həll yolları təklif etməyi hədəfləyən bir "
+"firmayıq."
+msgstr ""
+"We aim to offer new and innovative solutions in our fieldWe are not a firm."
+
+#: core/templates/index.html:196
+msgid "Sektorlar"
+msgstr "Sectors"
+
+#: core/templates/index.html:277
+msgid "Bizimlə əlaqə saxlayın"
+msgstr "Contact us"
+
+#: core/templates/index.html:281
+msgid "Mail"
+msgstr "Mail"
+
+#: core/templates/index.html:282
+msgid "Telefon"
+msgstr "Phone"
+
+#: core/templates/index.html:283
+msgid "Ünvan"
+msgstr "Address"
+
+#: core/templates/innovations-details.html:222
+msgid "Paylaşın"
+msgstr "Share"
+
+#: core/templates/sectors.html:190 core/templates/sectors.html:216
+msgid "Ümumi"
+msgstr "General"
+
+#: core/templates/sectors.html:196
+msgid "Sahələr"
+msgstr "Fields"
+
+#: core/templates/sectors.html:202
+msgid "Referanslar"
+msgstr "References"
+
+#: core/templates/team.html:195
+msgid "Rəhbərlik"
+msgstr "Leadership"
+
+#: core/templates/vacancy-details.html:192
+msgid "Müraciət edin"
+msgstr "Apply"
+
+#: core/templates/vacancy-details.html:208
+msgid "Vəzifə"
+msgstr "Position"
+
+#: core/templates/vacancy-details.html:213
+msgid "Tələblər"
+msgstr "Requirements"
+
+#: core/templates/vacancy-details.html:220
+msgid "Öhdəliklər"
+msgstr "Liabilities"
+
+#: core/templates/vacancy-details.html:227
+msgid "İş şəraiti"
+msgstr "Working conditions"
+
+#: core/templates/vacancy-details.html:251
+msgid "CV-ni yüklə"
+msgstr "Download your CV"
+
+#: core/templates/vacancy-details.html:261
+msgid "Vakant Yer"
+msgstr "Vacant Earth"
+
+#: core/templates/vacancy-details.html:269
+msgid "*AD, SOYAD, ATA ADI"
+msgstr "*NAME, SURNAME, FATHER'S NAME"
+
+#: core/templates/vacancy-details.html:293
+msgid "Göndər"
+msgstr "Send"

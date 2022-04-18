@@ -1,5 +1,6 @@
 from django.contrib import admin
-from django.utils.html import format_html
+from modeltranslation.admin import TranslationAdmin
+
 
 from core.models import (
     About, 
@@ -16,13 +17,17 @@ from core.models import (
 # Register your models here.
 
 @admin.register(Career)
-class CareerAdmin(admin.ModelAdmin):
+class CareerAdmin(TranslationAdmin):
     list_display = ['position',]
     
     
 
+
+    
+    
+
 @admin.register(Innovations)
-class InnovationsAdmin(admin.ModelAdmin):
+class InnovationsAdmin(TranslationAdmin):
     list_display = ['title','description','image_tag','created_at','updated_at','is_published','main_news',]
     list_filter = ['title','description','created_at','updated_at','is_published',]
     search_fields = ('title',)
@@ -34,24 +39,24 @@ class InnovationsAdmin(admin.ModelAdmin):
     
 
 @admin.register(Sector)
-class SectorAdmin(admin.ModelAdmin):
+class SectorAdmin(TranslationAdmin):
     list_display = ['count','title','description','image_tag',]
     
 @admin.register(CategoryDesign)
-class CategoryDesignAdmin(admin.ModelAdmin):
+class CategoryDesignAdmin(TranslationAdmin):
     list_display = ['title','description','image_tag',]
     
     
 @admin.register(Korporativ)
-class KorporativAdmin(admin.ModelAdmin):
+class KorporativAdmin(TranslationAdmin):
     list_display = ['description',]
 
 
-# @admin.register(KorporativCategory)
-# class KorporativCategoryAdmin(admin.ModelAdmin):
-#     list_display = ['category']
+@admin.register(KorporativCategory)
+class KorporativCategoryAdmin(TranslationAdmin):
+    list_display = ['title','image',]
 
-admin.site.register(KorporativCategory)
+# admin.site.register(KorporativCategory)
 
 
 @admin.register(CareerCsv)
@@ -66,22 +71,14 @@ class CareerCsvAdmin(admin.ModelAdmin):
     
     
 @admin.register(RehberlikCategory)
-class RehberlikCategoryAdmin(admin.ModelAdmin):
+class RehberlikCategoryAdmin(TranslationAdmin):
     list_display = ['position','korporativcategory','full_name','facebook_link','linkedin_link','image_tag',]
 
     
 
 
-
-
-    
-
-
-
-
-
 @admin.register(Address)
-class AddressAdmin(admin.ModelAdmin):
+class AddressAdmin(TranslationAdmin):
     list_display = ['address','phone_number1','phone_number2','phone_number3']
     list_filter = ['address',]
     search_fields = ('address',)
@@ -95,5 +92,5 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 @admin.register(About)
-class AboutAdmin(admin.ModelAdmin):
+class AboutAdmin(TranslationAdmin):
     list_display = ['haqqımızda',]

@@ -37,6 +37,8 @@ class KorporativCategory(models.Model):
     content = RichTextUploadingField(blank=True, null=True)
     slug = models.CharField(max_length=300, verbose_name='Slug', unique=True, blank=True, null=True)
     
+    
+    
     def __str__(self):
         if self.category:
             return f"{self.category.title} > {self.title}"
@@ -56,7 +58,7 @@ class KorporativCategory(models.Model):
         verbose_name_plural = 'Esas Category'
         
     class Meta:
-       ordering = ['-title',]
+       ordering = ('id',)
     
     
 
@@ -88,6 +90,9 @@ class RehberlikCategory(models.Model):
     
     class Meta:
         verbose_name_plural = 'Rehberlik Team'
+        
+        
+    
     
     
 

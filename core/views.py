@@ -9,6 +9,8 @@ from .forms import  CareerCvForm, CareerForm, ContactForm
 from django.urls import reverse, reverse_lazy
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.core.mail import send_mail
+from django.conf import settings
 from django.shortcuts import render
 # from .forms import CareerForm
 
@@ -174,6 +176,22 @@ class ContactCreateView(SuccessMessageMixin,CreateView):
     
     
     def form_valid(self, form):
+    #     message = "{name} / {email} said: ".format(
+    #     name=form.cleaned_data.get('name'),
+    #     email=form.cleaned_data.get('email'))
+    #     message += "\n\n{0}".format(form.cleaned_data.get('message'))
+        
+        
+        
+    #     subject = 'Message subject'
+    #     send_mail(
+    #     subject,
+    #     message=message,
+    #     from_email='elish777888999@gmail.com',
+    #     recipient_list=[settings.EMAIL_HOST_USER],
+    #     fail_silently=False
+        
+    # )
         form.save()
         context =  super().form_valid(form)
         return context

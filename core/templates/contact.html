@@ -1,4 +1,5 @@
-{% load static %}
+{% load static i18n %}
+
 {% load custom_tags %}
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +34,7 @@
                    <ul>
                        <li>
                         <div class="drop-btn list list-color">
-                            <div class="c drop-one-1 black" data-sub="item1">  Korporativ  
+                            <div class="c drop-one-1 black" data-sub="item1">  {% trans "Haqqımızda" %}  
                                 <span class="drop-down change-icon"><img src="{% static 'svg/arrow-black.svg' %}" alt=""></span>
                             </div>
                         </div>
@@ -44,7 +45,7 @@
                    <ul>
                        <li>
                             <div class="drop-btn open-list list list-color">
-                                <div class="c drop-one-1 black"  data-sub="item2">Sektorlar
+                                <div class="c drop-one-1 black"  data-sub="item2">{% trans "Bizneslər" %}
                                     <span class="drop-down change-icon"><img src="{% static 'svg/arrow-black.svg' %}" alt=""></span>
                                 </div>
                             </div>
@@ -54,7 +55,7 @@
                    <ul>
                        <li>
                             <div class="drop-btn list list-color black">
-                                <a href="{% url 'core:innovations' %}">Yeniliklər</a>
+                                <a href="{% url 'core:innovations' %}">{% trans "Yeniliklər" %}</a>
                             </div>
                        </li>
                    </ul>
@@ -62,7 +63,7 @@
                     <ul>
                         <li>
                             <div class="drop-btn list list-color black">
-                                <a href="{% url 'core:career' %}">Karyera</a>
+                                <a href="{% url 'core:career' %}">{% trans "Karyera" %}</a>
                             </div>
                         </li>
                         
@@ -71,7 +72,7 @@
                     <ul>
                         <li>
                             <div class="drop-btn list list-color black">
-                                <a href="{% url 'core:contact' %}">Əlaqə</a>
+                                <a href="{% url 'core:contact' %}">{% trans "Əlaqə" %}</a>
                             </div>
                         </li>
                         
@@ -86,11 +87,11 @@
                                         {% header_categories as context %}
                                             {% for s in context.korporativcategory %}
                                             <div class="card3" data-bg="{{s.image.url}}">
-                                                {% if s.title == "Şirkət tarixçəsi" %}
+                                                {% if s.title == "Şirkət tarixçəsi" or s.title == "Company history" or s.title == "История компании"  %}
                                                 <a href="{% url 'core:korporative' %}#history">{{s.title}}</a>
-                                                {% elif s.title == "Rəhbərlik" %}                                                
+                                                {% elif s.title == "Komandamız" or s.title == "Our team" or s.title == "История компании" %}                                                
                                                 <a href="{% url 'core:korporative' %}#leadership">{{s.title}}</a>
-                                                {% elif s.title == "Missiyamız" %}
+                                                {% elif s.title == "Missiyamız" or s.title == "Our mission" or s.title == "Наша миссия" %}
                                                 <a href="{% url 'core:korporative' %}#ourmission">{{s.title}}</a>
                                                 {% endif %}
                                             </div>
@@ -98,8 +99,8 @@
                                     </div>
 
                                     <div class="corporative">
-                                        <h4>Korporativ</h4>
-                                        <p>Keyfiyyət təkcə bizim standartımız deyil. Bu, həm də şirkətimizə aşılanmış bir münasibətdir. 
+                                        <h4>{% trans "Haqqımızda" %}</h4>
+                                        <p>{% trans "Keyfiyyət təkcə bizim standartımız deyil. Bu, həm də şirkətimizə aşılanmış bir münasibətdir." %} 
                                         </p>
                                     </div>
                                 </div>
@@ -129,8 +130,8 @@
                                     </div>
 
                                     <div class="corporative">
-                                        <h4>Sektorlar</h4>
-                                        <p>İllərdir sübut olunmuş təcrübə ilə bu gün İnşaat, Təchizat və Dam örtükləri sahələrində fəaliyyət göstəririk.</p>
+                                        <h4>{% trans "Bizneslər" %}</h4>
+                                        <p>{% trans "İllərdir sübut olunmuş təcrübə ilə bu gün İnşaat, Təchizat və Dam örtükləri sahələrində fəaliyyət göstəririk." %}</p>
                                     </div>
                                 </div>
                             
@@ -150,22 +151,21 @@
 
                 <div class="lang  change-lang-color">
                     <li class="button-dropdown">
-                        <a href="javascript:void(0)" class="dropdown-toggle2">
-                            <span class="drop-down  change-icon2"><img src="{% static 'svg/arrow-black-right.svg' %}" alt=""></span>
-                            <p>AZ</p>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li>
-                              <a href="#">
-                                En
-                              </a>
-
-                              <a href="#">
-                                Ru
-                              </a>
-                            </li>
-                          </ul>
+                        <div class="lang">
+                        <form action="{% url 'set_language' %}" method="post">  {#2#}
+                            {% csrf_token %}  {#3#}
+                            <select name="language" class="lng" style="background:none; border:none; color:black;">  {#4#}
+                                {% get_current_language as LANGUAGE_CODE %}  {#5#}
+                                {% get_available_languages as LANGUAGES %}  {#6#}
+                                {% get_language_info_list for LANGUAGES as languages %}  {#7#}
+                                {% for language in languages %}
+                                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>  {#8#}
+                                        {{ language.local }} {{ language.code }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </form>
+                    </div>
                     </li>
                 </div>
           
@@ -178,7 +178,7 @@
     
     <section class="inn-title background-color-g">
         <div class="my-container">
-            <div class="innovations-title color-b">Əlaqə</div>
+            <div class="innovations-title color-b">{% trans "Əlaqə" %}</div>
 
 
             <div class="contact-content">
@@ -195,20 +195,20 @@
                         {% endfor %}
                     </div>
 
-                    <div class="contact-socials">
-                        <a href=""><img src="{% static 'svg/instagram.svg' %}" alt=""></a> 
-                        <a href=""><img src="{% static 'svg/facebook.svg' %}" alt=""></a>
-                        <a href=""><img src="{% static 'svg/linkedin.svg' %}" alt=""></a> 
-                    </div>
+                    <div class="socials">
+                        <a href="https://www.instagram.com/bashakgroup.az"><img src="{% static 'svg/instagram.svg' %}" alt=""></a> 
+                        <a href="https://www.facebook.com/bashakgroup.az"><img src="{% static 'svg/facebook.svg' %}" alt=""></a> 
+                        <a href="https://www.linkedin.com/company/basak-group"><img src="{% static 'svg/linkedin.svg' %}" alt=""></a> 
+                     </div>
 
                     <div class="map-btns">
                         <a href="https://www.google.com/maps/place/Ba%C5%9Fak+Group/@40.4286464,49.8830758,15z/data=!4m5!3m4!1s0x0:0x5b40a27eb694bf9b!8m2!3d40.4286558!4d49.883076" target="_blank">
-                            <div class="map-btn1">Xəritəni göstər</div>
+                            <div class="map-btn1">{% trans "Xəritəni göstər" %}</div>
                         </a>
 
                         <a href="https://www.google.com/maps/dir//Ba%C5%9Fak+Group+Ba%C5%9Fak+Group,+ZIYA+BUNYADOV+PR.3105,+Baku,+Az%C9%99rbaycan/@40.4145674,49.8294196,14z/data=!4m8!4m7!1m0!1m5!1m1!1s0x403087b0ea358379:0x5b40a27eb694bf9b!2m2!1d49.8830758!2d40.4286464'" target="_blank">
                             <div class="map-btn2">
-                                Marşurutu göstər
+                                {% trans "Marşurutu göstər" %}
                             </div>
                         </a>
                     </div>
@@ -222,7 +222,7 @@
 
                         <div class="inputs">
                             <label for="">
-                                <div class="input-text">Adınız *</div> 
+                                <div class="input-text">{% trans "Adınız" %} *</div> 
                                 {{form.name}}
 
                             </label>
@@ -238,7 +238,7 @@
 
                         <div class="inputs">
                             <label for="number">
-                                <div class="input-text">Telefon nömrə</div> 
+                                <div class="input-text">{% trans "Telefon nömrə" %}</div> 
                                 {{form.phone}}
 
                             </label>
@@ -246,13 +246,13 @@
 
                         <div class="inputs">
                             <label for="">
-                                <div class="input-text">İsmarıc *</div> 
+                                <div class="input-text">{% trans "İsmarıc" %} *</div> 
                                 {{form.message}}
                                
                             </label>
                         </div>
 
-                        <button type="submit" >GÖNDƏR</button>
+                        <button type="submit" >{% trans "GÖNDƏR" %}</button>
                     </form>
                 </div>
             </div>
@@ -263,13 +263,13 @@
         <div class="my-container">
             <div class="footer-content">
                 <div class="copyright">
-                    © Başak Group 2022. Bütün haqqları qorunur.
+                    © {% trans "Başak Group 2022. Bütün haqqları qorunur." %}
                 </div>
 
                 <div class="socials">
-                   <a href=""><img src="{% static 'assets/svg/instagram.svg' %}" alt=""></a> 
-                   <a href=""><img src="{% static 'assets/svg/facebook.svg' %}" alt=""></a> 
-                   <a href=""><img src="{% static 'assets/svg/linkedin.svg' %}" alt=""></a> 
+                   <a href="https://www.instagram.com/bashakgroup.az"><img src="{% static 'svg/instagram.svg' %}" alt=""></a> 
+                   <a href=""><img src="{% static 'svg/facebook.svg' %}" alt=""></a> 
+                   <a href=""><img src="{% static 'svg/linkedin.svg' %}" alt=""></a> 
                 </div>
 
                 <div class="powered-by">
@@ -310,6 +310,28 @@
         {% endfor %}
 
 	</script>
+
+    <script>
+        $(document).ready(function () {
+            c = $("input[name='csrfmiddlewaretoken']").val();
+    
+            $(".lng").on("change", function () {
+                lng = $(this).val();
+                $.ajax({
+                    url: "{% url 'set_language' %}",
+                    method: 'POST',
+                    data: {language: lng, csrfmiddlewaretoken: c},
+                    success: function () {
+                        location.reload();
+                    },
+                    error: function (e) {
+                        $("body").html(e.responseText);
+                    }
+                })
+            });
+    
+        });
+    </script>
     
 </body>
 </html>

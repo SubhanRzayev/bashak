@@ -1,5 +1,5 @@
 
-{% load static %}
+{% load static i18n %}
 {% load custom_tags %}
 
 
@@ -40,7 +40,7 @@
                    <ul>
                        <li>
                         <div class="drop-btn list list-color">
-                            <div class="c drop-one-1 black" data-sub="item1">  Korporativ  
+                            <div class="c drop-one-1 black" data-sub="item1">  {% trans "Haqqımızda" %}  
                                 <span class="drop-down change-icon"><img src="{% static 'svg/arrow-black.svg' %}" alt=""></span>
                             </div>
                         </div>
@@ -51,7 +51,7 @@
                    <ul>
                        <li>
                             <div class="drop-btn open-list list list-color">
-                                <div class="c drop-one-1 black"  data-sub="item2">Sektorlar
+                                <div class="c drop-one-1 black"  data-sub="item2">{% trans "Bizneslər" %}
                                     <span class="drop-down change-icon"><img src="{% static 'svg/arrow-black.svg' %}" alt=""></span>
                                 </div>
                             </div>
@@ -61,7 +61,7 @@
                    <ul>
                        <li>
                             <div class="drop-btn list list-color black">
-                                <a href="{% url 'core:innovations' %}">Yeniliklər</a>
+                                <a href="{% url 'core:innovations' %}">{% trans "Yeniliklər" %}</a>
                             </div>
                        </li>
                    </ul>
@@ -69,7 +69,7 @@
                     <ul>
                         <li>
                             <div class="drop-btn list list-color black">
-                                <a href="{% url 'core:career' %}">Karyera</a>
+                                <a href="{% url 'core:career' %}">{% trans "Karyera" %}</a>
                             </div>
                         </li>
                         
@@ -78,7 +78,7 @@
                     <ul>
                         <li>
                             <div class="drop-btn list list-color black">
-                                <a href="{% url 'core:contact' %}">Əlaqə</a>
+                                <a href="{% url 'core:contact' %}">{% trans "Əlaqə" %}</a>
                             </div>
                         </li>
                         
@@ -93,11 +93,11 @@
                                         {% header_categories as context %}
                                             {% for s in context.korporativcategory %}
                                             <div class="card3" data-bg="{{s.image.url}}">
-                                                {% if s.title == "Şirkət tarixçəsi" %}
+                                                {% if s.title == "Şirkət tarixçəsi" or s.title == "Company history" or s.title == "История компании"  %}
                                                 <a href="{% url 'core:korporative' %}#history">{{s.title}}</a>
-                                                {% elif s.title == "Rəhbərlik" %}                                                
+                                                {% elif s.title == "Komandamız" or s.title == "Our team" or s.title == "История компании" %}                                                
                                                 <a href="{% url 'core:korporative' %}#leadership">{{s.title}}</a>
-                                                {% elif s.title == "Missiyamız" %}
+                                                {% elif s.title == "Missiyamız" or s.title == "Our mission" or s.title == "Наша миссия" %}
                                                 <a href="{% url 'core:korporative' %}#ourmission">{{s.title}}</a>
                                                 {% endif %}
                                             </div>
@@ -105,8 +105,8 @@
                                     </div>
 
                                     <div class="corporative">
-                                        <h4>Korporativ</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis aliquet libero, ac suscipit libero sollicitudin eget.</p>
+                                        <h4>{% trans "Haqqımızda" %}</h4>
+                                        <p>{% trans "Keyfiyyət təkcə bizim standartımız deyil. Bu, həm də şirkətimizə aşılanmış bir münasibətdir." %}</p>
                                     </div>
                                 </div>
                             
@@ -134,8 +134,8 @@
                                     </div>
 
                                     <div class="corporative">
-                                        <h4>Sektorlar</h4>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus convallis aliquet libero, ac suscipit libero sollicitudin eget.</p>
+                                        <h4>{% trans "Bizneslər" %}</h4>
+                                        <p>{% trans "İllərdir sübut olunmuş təcrübə ilə bu gün İnşaat, Təchizat və Dam örtükləri sahələrində fəaliyyət göstəririk." %}</p>
                                     </div>
                                 </div>
                             
@@ -155,22 +155,21 @@
 
                 <div class="lang  change-lang-color">
                     <li class="button-dropdown">
-                        <a href="javascript:void(0)" class="dropdown-toggle2">
-                            <span class="drop-down  change-icon2"><img src="{% static 'svg/arrow-black-right.svg' %}" alt=""></span>
-                            <p>AZ</p>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li>
-                              <a href="#">
-                                En
-                              </a>
-
-                              <a href="#">
-                                Ru
-                              </a>
-                            </li>
-                          </ul>
+                        <div class="lang">
+                        <form action="{% url 'set_language' %}" method="post">  {#2#}
+                            {% csrf_token %}  {#3#}
+                            <select name="language" class="lng">  {#4#}
+                                {% get_current_language as LANGUAGE_CODE %}  {#5#}
+                                {% get_available_languages as LANGUAGES %}  {#6#}
+                                {% get_language_info_list for LANGUAGES as languages %}  {#7#}
+                                {% for language in languages %}
+                                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>  {#8#}
+                                        {{ language.local }} {{ language.code }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </form>
+                    </div>
                     </li>
                 </div>
           
@@ -190,11 +189,11 @@
 
                 <div class="vacancy-btns">
                     <a href="#joinus">
-                        <div class="join-us"> <p>Müraciət edin</p>  </div>
+                        <div class="join-us"> <p>{% trans "Müraciət edin" %}</p>  </div>
                      </a>
 
                      <a href="#join">
-                        <div class="join-us btn-gray"> <p>Haqqımızda</p>  </div>
+                        <div class="join-us btn-gray"> <p>{% trans "Haqqımızda" %}</p>  </div>
                      </a>
                 </div>
             </div>
@@ -206,26 +205,26 @@
             <div class="vacancy-content">
                 
                 <div class="about-vacancy">
-                    <h4>Vəzifə</h4>
+                    <h4>{% trans "Vəzifə" %}</h4>
                     <p>{{career.position}}</p>
                 </div>
 
                 <div class="about-vacancy">
-                    <h4>Tələblər</h4>
+                    <h4>{% trans "Tələblər" %}</h4>
                     <ul>
                         {{career.requirements|safe}}
                     </ul>
                 </div>
 
                 <div class="about-vacancy">
-                    <h4>Öhdəliklər</h4>
+                    <h4>{% trans "Öhdəliklər" %}</h4>
                     <ul>
                         {{career.obligations|safe}}
                     </ul>
                 </div>
 
                 <div class="about-vacancy">
-                    <h4>İş şəraiti</h4>
+                    <h4>{% trans "İş şəraiti" %}</h4>
                     <ul>
                         {{career.working_conditions|safe}}
                     </ul>
@@ -238,7 +237,7 @@
     <section class="about-us" >
         <div class="my-container">
             <div class="about-vacancy" id="join">
-                <h4 >Haqqımızda</h4>
+                <h4 >{% trans "Haqqımızda" %}</h4>
                 {% for a in about_list %}
                 <p>{{a.haqqımızda}}</p>
                 {% endfor %}
@@ -249,7 +248,7 @@
             <div class="cv" id="addcv">
 
                 <div class="about-vacancy">
-                    <h4>CV-ni yüklə</h4>
+                    <h4>{% trans "CV-ni yüklə" %}</h4>
                    
                 </div>
 
@@ -259,7 +258,7 @@
                         
                         <label for="">
                             <div class="custom-select">
-                                <p>Vakant Yer</p>
+                                <p>{% trans "Vakant Yer" %}</p>
                                 <select class="requiredS1" id="experience">
                                   <option  value="{{career}}" selected>{{career}}</option>
                                  
@@ -267,7 +266,7 @@
                               </div>
 
                             {{forms.career}}
-                            <div class="vakant">*AD, SOYAD, ATA ADI</div>
+                            <div class="vakant">{% trans "*AD, SOYAD, ATA ADI" %}</div>
                             {{forms.full_name}}
                             <div class="vakant">*E-MAIL</div>
                             
@@ -291,7 +290,7 @@
                     </div>
 
                     <div class="vacancy-btns send-vacancy" id="joinus">
-                        <button type="submit" id="basicAlert" class=" btn btn-outline-dark join-us"><p>Göndər</p></div>
+                        <button type="submit" id="basicAlert" class=" btn btn-outline-dark join-us"><p>{% trans "Göndər" %}</p></div>
                     </div>
                     
                 </form>
@@ -309,14 +308,14 @@
         <div class="my-container">
             <div class="footer-content">
                 <div class="copyright">
-                    © Başak Group 2022. Bütün haqqları qorunur.
+                    © {% trans "Başak Group 2022. Bütün haqqları qorunur." %}
                 </div>
 
                 <div class="socials">
-                   <a href=""><img src="{% static 'svg/instagram.svg' %}" alt=""></a> 
-                   <a href=""><img src="{% static 'svg/facebook.svg' %}" alt=""></a> 
-                   <a href=""><img src="{% static 'svg/linkedin.svg' %}" alt=""></a> 
-                </div>
+                    <a href="https://www.instagram.com/bashakgroup.az"><img src="{% static 'svg/instagram.svg' %}" alt=""></a> 
+                    <a href="https://www.facebook.com/bashakgroup.az"><img src="{% static 'svg/facebook.svg' %}" alt=""></a> 
+                    <a href="https://www.linkedin.com/company/basak-group"><img src="{% static 'svg/linkedin.svg' %}" alt=""></a> 
+                 </div>
 
                 <div class="powered-by">
                    <a href=""><img src="{% static 'svg/powered-by.svg' %}" alt=""></a> 
@@ -368,6 +367,30 @@
 
     
 	</script>
+
+    <script>
+        $(document).ready(function () {
+            c = $("input[name='csrfmiddlewaretoken']").val();
+    
+            $(".lng").on("change", function () {
+                lng = $(this).val();
+                $.ajax({
+                    url: "{% url 'set_language' %}",
+                    method: 'POST',
+                    data: {language: lng, csrfmiddlewaretoken: c},
+                    success: function () {
+                        location.reload();
+                    },
+                    error: function (e) {
+                        $("body").html(e.responseText);
+                    }
+                })
+            });
+    
+        });
+    </script>
+
+
     
 </body>
 </html>
