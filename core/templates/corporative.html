@@ -198,11 +198,17 @@
                 {% for s in context.korporativcategory %}
                 <div class="filter-box">
                     {% if s.title == "Şirkət tarixçəsi" or s.title == "Company history" or s.title == "История компании"  %}
-                    <a href="{% url 'core:korporative' %}#history">{{s.title}}</a>
+                    <a href="{% url 'core:korporative' %}#history">
+                        <div class="filter">{{s.title}}</div>
+                    </a>
                     {% elif s.title == "Komandamız" or s.title == "Our team" or s.title == "История компании" %}                                                
-                    <a href="{% url 'core:korporative' %}#leadership">{{s.title}}</a>
+                    <a href="{% url 'core:korporative' %}#leadership"> 
+                        <div class="filter">{{s.title}}</div>
+                    </a>
                     {% elif s.title == "Missiyamız" or s.title == "Our mission" or s.title == "Наша миссия" %}
-                    <a href="{% url 'core:korporative' %}#ourmission">{{s.title}}</a>
+                    <a href="{% url 'core:korporative' %}#ourmission"> 
+                        <div class="filter">{{s.title}}</div>
+                    </a>
                     {% endif %}
 
 

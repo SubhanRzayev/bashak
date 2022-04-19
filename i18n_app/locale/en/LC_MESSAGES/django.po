@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-18 13:20+0000\n"
+"POT-Creation-Date: 2022-04-19 09:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -49,7 +49,8 @@ msgstr "About"
 #: core/templates/career.html:49 core/templates/contact.html:48
 #: core/templates/contact.html:133 core/templates/corporative.html:49
 #: core/templates/corporative.html:134 core/templates/index.html:48
-#: core/templates/index.html:129 core/templates/innovations-details.html:50
+#: core/templates/index.html:129 core/templates/index.html:196
+#: core/templates/innovations-details.html:50
 #: core/templates/innovations-details.html:134
 #: core/templates/innovations.html:50 core/templates/innovations.html:135
 #: core/templates/sectors.html:51 core/templates/sectors.html:135
@@ -85,12 +86,16 @@ msgstr "Career"
 msgid "Əlaqə"
 msgstr "Contact"
 
-#: core/templates/career.html:104 core/templates/sectors.html:106
+#: core/templates/career.html:104 core/templates/contact.html:103
+#: core/templates/corporative.html:104 core/templates/index.html:103
+#: core/templates/index.html:197 core/templates/innovations-details.html:105
+#: core/templates/innovations.html:105 core/templates/sectors.html:106
+#: core/templates/team.html:105 core/templates/vacancy-details.html:109
 msgid ""
 "Keyfiyyət təkcə bizim standartımız deyil. Bu, həm də şirkətimizə aşılanmış "
-"bir münasibətdir. "
+"bir münasibətdir."
 msgstr ""
-"Quality is not our only standard. It is also instilled in our companyIt's an "
+"Quality is not only our standard. It is also instilled in our companyIt's an "
 "attitude."
 
 #: core/templates/career.html:134
@@ -204,17 +209,11 @@ msgstr ""
 msgid "Müraciət et"
 msgstr "Apply"
 
-#: core/templates/contact.html:103 core/templates/corporative.html:104
-#: core/templates/index.html:103 core/templates/index.html:197
-#: core/templates/innovations-details.html:105
-#: core/templates/innovations.html:105 core/templates/team.html:105
-#: core/templates/vacancy-details.html:109
-msgid ""
-"Keyfiyyət təkcə bizim standartımız deyil. Bu, həm də şirkətimizə aşılanmış "
-"bir münasibətdir."
-msgstr ""
-"Quality is not only our standard. It is also instilled in our companyIt's an "
-"attitude."
+#: core/templates/career.html:327
+#, fuzzy
+#| msgid "Başak Group 2022. Bütün haqqları qorunur."
+msgid "Başak Group 2022. Bütün haqqları qorunur"
+msgstr "Basak Group 2022. All rights reserved."
 
 #: core/templates/contact.html:206
 msgid "Xəritəni göstər"
@@ -240,9 +239,9 @@ msgstr "Message"
 msgid "GÖNDƏR"
 msgstr "SEND"
 
-#: core/templates/contact.html:266 core/templates/corporative.html:305
+#: core/templates/contact.html:266 core/templates/corporative.html:298
 #: core/templates/index.html:304 core/templates/innovations-details.html:239
-#: core/templates/innovations.html:258 core/templates/sectors.html:257
+#: core/templates/innovations.html:258 core/templates/sectors.html:258
 #: core/templates/team.html:239 core/templates/vacancy-details.html:311
 msgid "Başak Group 2022. Bütün haqqları qorunur."
 msgstr "Basak Group 2022. All rights reserved."
@@ -261,10 +260,6 @@ msgid ""
 "firmayıq."
 msgstr ""
 "We aim to offer new and innovative solutions in our fieldWe are not a firm."
-
-#: core/templates/index.html:196
-msgid "Sektorlar"
-msgstr "Sectors"
 
 #: core/templates/index.html:277
 msgid "Bizimlə əlaqə saxlayın"
@@ -286,21 +281,21 @@ msgstr "Address"
 msgid "Paylaşın"
 msgstr "Share"
 
-#: core/templates/sectors.html:190 core/templates/sectors.html:216
+#: core/templates/sectors.html:191 core/templates/sectors.html:217
 msgid "Ümumi"
 msgstr "General"
 
-#: core/templates/sectors.html:196
+#: core/templates/sectors.html:197
 msgid "Sahələr"
 msgstr "Fields"
 
-#: core/templates/sectors.html:202
+#: core/templates/sectors.html:203
 msgid "Referanslar"
 msgstr "References"
 
 #: core/templates/team.html:195
-msgid "Rəhbərlik"
-msgstr "Leadership"
+msgid "Komandamız"
+msgstr "Our team"
 
 #: core/templates/vacancy-details.html:192
 msgid "Müraciət edin"
@@ -337,3 +332,13 @@ msgstr "*NAME, SURNAME, FATHER'S NAME"
 #: core/templates/vacancy-details.html:293
 msgid "Göndər"
 msgstr "Send"
+
+#~ msgid "Rəhbərlik"
+#~ msgstr "Leadership"
+
+#~ msgid ""
+#~ "Keyfiyyət təkcə bizim standartımız deyil. Bu, həm də şirkətimizə "
+#~ "aşılanmış bir münasibətdir. "
+#~ msgstr ""
+#~ "Quality is not our only standard. It is also instilled in our companyIt's "
+#~ "an attitude."

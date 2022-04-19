@@ -42,11 +42,16 @@ nav {
     z-index: 7;
 }
 
+.hdr {
+    position: relative;
+    z-index: 999;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 55px 40px;
+    padding: 25px 40px;
 }
   
 .navbar-list {
@@ -343,6 +348,18 @@ nav {
 }
 
 
+.background-dark2 {
+    background: rgba(26, 26, 26, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    z-index: 1;
+}
+
+
+
 .header-title {
     position: absolute;
     height: 100%;
@@ -383,6 +400,7 @@ nav {
 }
 
 
+
 .sectors-title {
     position: relative;
     padding: 200px 0;
@@ -390,7 +408,7 @@ nav {
 
 .sectors-title h1 {
     font-weight: 700;
-    font-size: 65px;
+    font-size: 50px;
     line-height: 98px;
     color: #fff;
 }
@@ -483,7 +501,7 @@ nav {
 
 .innovations-title {
     font-weight: 700;
-    font-size: 65px;
+    font-size: 50px;
     line-height: 98px;
     color: #FFFFFF;
     padding-top: 50px;
@@ -977,7 +995,7 @@ nav {
 
 .leader-title p {
     font-weight: 600;
-    font-size: 40px;
+    font-size: 30px;
     line-height: 60px;
 }
 
@@ -1280,8 +1298,23 @@ form button {
 /********************************  TIKINTI  ********************************/
 
 .sector-bg {
-    background: url(../img/construction-business.jpg) no-repeat;
-    background-size: cover;
+    position: relative;
+    
+}
+
+.sector-bg img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+
+}
+
+.sector-bg .my-container {
+    z-index: 99;
+    position: relative;
+
 }
 
 .sector-title-color {
@@ -1315,15 +1348,19 @@ form button {
 
 .img-title {
     position: absolute;
-    top: 60%;
-    left: 35%;
+    top: 44%;
+    left: 15%;
+    right: 15%;
     font-weight: 600;
     font-size: 40px;
     line-height: 60px;
     text-align: center;
     color: #FFFFFF;
     z-index: 8;
+
 }
+
+
 
 
   .overlay {
@@ -1808,6 +1845,42 @@ option {
 
 .custom-select{
     width: 90%;
+}
+
+
+
+
+.reference-img .img-title {
+    transition: all 0.6s;
+}
+
+.reference-slide .item:hover .img-title {
+    transform: translateY(-200px);
+  }
+
+
+
+
+  .reference-slide .item {
+    width: 510px;
+    height: 856px;
+
+
+}
+
+.img-title {
+    font-size: 30px;
+
+}
+
+.overlay  p { 
+    padding: 25px;
+    margin-right: 10px;
+}
+
+.head {
+    font-size: 18px;
+    line-height: 30px; 
 }
 
 

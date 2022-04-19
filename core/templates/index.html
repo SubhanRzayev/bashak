@@ -89,7 +89,7 @@
                                             <div class="card3" data-bg="{{s.image.url}}">
                                                 {% if s.title == "Şirkət tarixçəsi" or s.title == "Company history" or s.title == "История компании"  %}
                                                 <a href="{% url 'core:korporative' %}#history">{{s.title}}</a>
-                                                {% elif s.title == "Komandamız" or s.title == "Our team" or s.title == "История компании" %}                                                
+                                                {% elif s.title == "Komandamız" or s.title == "Our team" or s.title == "Наша команда" %}                                                
                                                 <a href="{% url 'core:korporative' %}#leadership">{{s.title}}</a>
                                                 {% elif s.title == "Missiyamız" or s.title == "Our mission" or s.title == "Наша миссия" %}
                                                 <a href="{% url 'core:korporative' %}#ourmission">{{s.title}}</a>
@@ -172,7 +172,10 @@
 
     <section class="home">
         <div class="background">
-            <img src="{% static 'img/Rectangle 15.png' %}" alt="">
+            <video autoplay muted loop>
+                <source src="{% static 'bg.mp4' %}" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
         </div>
         <div class="background-dark"></div>
         
@@ -193,7 +196,7 @@
             <div class="my-container">
 
                 <div class="sectors-title">
-                    <h1>{% trans "Sektorlar" %}</h1>
+                    <h1>{% trans "Bizneslər" %}</h1>
                 <p>{% trans "Keyfiyyət təkcə bizim standartımız deyil. Bu, həm də şirkətimizə aşılanmış bir münasibətdir." %} 
                 </p>
                 </div>
@@ -363,6 +366,9 @@
             });
     
         });
+
+
+
     </script>
     
 </body>

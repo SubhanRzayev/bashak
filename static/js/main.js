@@ -292,3 +292,6 @@ $('.second-slide').owlCarousel({
 //   }
 // })
 // })
+
+
+        
